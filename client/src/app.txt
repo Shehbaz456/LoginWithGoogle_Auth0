@@ -1,0 +1,25 @@
+import './App.css';
+import Home from './Components/Home.jsx';
+import Headers from './Components/Headers.jsx';
+import Login from './Components/Login.jsx';
+import Dashboard from './Components/Dashboard.jsx';
+import Error from './Components/Error.jsx';
+import { Routes, Route } from "react-router-dom"
+
+function App() {
+  const isAuthonticated = true;
+  return (
+    <>
+      <Headers />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
